@@ -1,0 +1,800 @@
+:root {
+    --primary-color: #000000;
+    /* Pure Black */
+    --accent-color-1: #1a1a1a;
+    /* Dark Gray/Black */
+    --accent-color-2: #333333;
+    /* Medium Gray/Black */
+    --accent-color-3: #ffffff;
+    /* Pure White */
+    --accent-color-4: #a5a4a4;
+    --accent-color-5: #ffff9a;
+    /* Cyan (kept as is) */
+    --text-light: #ffffff;
+    /* Light gray for general text */
+    --card-bg: rgba(0, 0, 0, 0.7);
+    /* Transparent black for cards */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: transparent;
+    /* Changed to transparent */
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll due to animations */
+}
+
+/* Canvas background container */
+#canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    /* Ensures it's behind other content */
+}
+
+#backgroundCanvas {
+    display: block;
+    /* Remove extra space below canvas */
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    /* This is the base background color */
+}
+
+/* Typography & General */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--accent-color-3);
+    /* Headings in white */
+}
+
+.accent-text {
+    color: var(--accent-color-3);
+    /* Using Cyan for primary accent text */
+}
+
+.highlight-text-color{
+    color: var(--accent-color-5);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color-5);
+    /* Using Cyan for section titles */
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color-3);
+    /* Using white for the title underline */
+    border-radius: 5px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Black with transparency */
+    backdrop-filter: blur(2px);
+    /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease;
+    border-bottom: 0px solid rgba(229, 229, 229, 0.5);
+    /* Subtle cyan border */
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    color: var(--accent-color-5) !important;
+    /* Cyan navbar brand */
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: var(--accent-color-4) !important;
+    /* White on hover */
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-light) !important;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--accent-color-5) !important;
+    /* Cyan on hover/active */
+    transform: translateY(-2px);
+}
+
+/* Custom Buttons */
+.custom-btn {
+    background-color: var(--accent-color-5);
+    /* Cyan button background */
+    border-color: var(--accent-color-4);
+    color: var(--primary-color);
+    /* Pure black text on button */
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.custom-btn:hover {
+    background-color: var(--accent-color-3);
+    /* White button hover */
+    border-color: var(--accent-color-3);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Home Section */
+#home {
+    background: transparent;
+    /* Changed to transparent */
+    padding-top: 100px;
+    /* Adjust for fixed navbar */
+}
+
+.img-con:hover{
+    padding: 50px;
+}
+
+.profile-img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    filter: grayscale(85%);
+    border: 2px solid var(--accent-color-4);
+    /* Cyan border */
+    box-shadow: 0 0 20px rgba(229, 229, 229, 0.5);
+    /* Cyan shadow */
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.25);
+    filter: grayscale(20%);
+}
+
+
+.stat-box {
+    background-color: var(--card-bg);
+    /* Transparent black for cards */
+    backdrop-filter: blur(8px);
+    /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 8px;
+    border: 1px solid rgba(229, 229, 229, 0.3);
+    /* Cyan border with transparency */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    padding: 15px 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px var(--accent-color-4);
+    /* Cyan hover shadow */
+}
+
+.stat-box h3 {
+    color: var(--accent-color-4);
+    /* Cyan stat numbers */
+    margin-bottom: 5px;
+}
+
+.stat-box p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 0;
+}
+
+/* About Me Section */
+#about {
+    background-color: transparent;
+}
+
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+/* Portfolio Section */
+#portfolio {
+    background-color: transparent;
+    /* Changed to transparent */
+}
+
+.portfolio-item {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    /* More transparent black */
+    backdrop-filter: blur(15px);
+    filter: grayscale(100%);
+    /* Increased blur for more glass effect */
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(229, 229, 229, 0.5) !important;
+    /* Slightly less transparent cyan border */
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    filter: grayscale(0%);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px var(--accent-color-4);
+    /* Cyan hover shadow */
+}
+
+
+/* Styles for built-in video and audio players */
+.video-player-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Slightly more opaque background for video container */
+    backdrop-filter: blur(10px);
+    /* Applied blur for inner consistency */
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--accent-color-4);
+    /* Use accent color for border */
+    overflow: hidden;
+    /* Ensures rounded corners apply to video */
+}
+
+.video-player-container:hover {
+    border-color: var(--accent-color-3);
+    /* White on hover */
+}
+
+.video-player-container video {
+    display: block;
+    /* Remove extra space below video */
+    width: 100%;
+    /* Ensure video takes full width of container */
+    height: auto;
+    /* Maintain aspect ratio */
+    border-radius: 8px 8px 0 0;
+    /* Match card border radius top corners */
+}
+
+.audio-player-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Slightly more opaque background for audio container */
+    backdrop-filter: blur(10px);
+    /* Applied blur for inner consistency */
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--accent-color-4);
+    /* Use accent color for border */
+    padding: 15px;
+    /* Add some padding around the audio player */
+    border-radius: 8px 8px 0 0;
+    /* Match card border radius top corners */
+}
+
+.audio-player-container:hover {
+    border-color: var(--accent-color-3);
+    /* White on hover */
+}
+
+.audio-player-container audio {
+    display: block;
+    width: 100%;
+
+    /* Styling for native controls (limited and browser-specific) */
+    /* Track background */
+    &::-webkit-media-controls-timeline {
+        background-color: var(--accent-color-2);
+        /* Medium Gray/Black */
+        border-radius: 5px;
+    }
+
+    /* Progress fill */
+    &::-webkit-media-controls-current-time-display,
+    &::-webkit-media-controls-time-remaining-display {
+        color: var(--text-light);
+    }
+
+    &::-webkit-media-controls-play-button,
+    &::-webkit-media-controls-volume-slider {
+        color: var(--accent-color-3);
+        /* White for icons/sliders */
+    }
+
+    &::-webkit-media-controls-panel {
+        background-color: var(--accent-color-2);
+        /* Medium Gray/Black */
+        color: var(--primary-color);
+        /* Dark text for controls */
+    }
+
+    /* Firefox specific controls styling */
+    &::-moz-range-track {
+        background-color: var(--accent-color-2);
+        /* Medium Gray/Black */
+        border-radius: 5px;
+    }
+
+    &::-moz-range-thumb {
+        background-color: var(--accent-color-2);
+        /* Medium Gray/Black */
+    }
+
+    &::-moz-focus-outer {
+        border: 0;
+    }
+}
+
+
+.portfolio-item .card-body {
+    padding: 20px;
+    color: var(--text-light);
+}
+
+.portfolio-item .card-title {
+    color: var(--accent-color-3);
+    /* White for portfolio item titles */
+}
+
+.view-project-btn {
+    color: var(--accent-color-4) !important;
+    /* Cyan button text */
+    border-color: var(--accent-color-4) !important;
+    transition: all 0.3s ease;
+}
+
+.view-project-btn:hover {
+    background-color: var(--accent-color-4) !important;
+    /* Cyan button background on hover */
+    color: var(--primary-color) !important;
+}
+
+/* Professional Skills Section */
+#professional-skills {
+    background-color: transparent;
+    /* Changed to transparent */
+}
+
+.skill-card {
+    background-color: rgba(0, 0, 0, 0.05);
+    /* More transparent black */
+    backdrop-filter: blur(1px);
+    /* Increased blur */
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 8px;
+    border: 0px solid rgba(229, 229, 229, 0.5);
+    /* Slightly less transparent border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px var(--accent-color-4);
+    border-color: var(--accent-color-4);
+    /* Cyan hover shadow */
+}
+
+.skill-card i {
+    color: var(--accent-color-3);
+    /* Cyan skill icons */
+    transition: transform 0.3s ease;
+}
+
+.skill-card h4 {
+    color: var(--accent-color-4);
+    /* White for skill titles */
+}
+
+.skill-card p {
+    color: var(--text-light);
+}
+
+.skill-card:hover i {
+    transform: scale(1.1);
+}
+
+/* Achievements Section */
+#achievements {
+    background-color: transparent;
+    /* Changed to transparent */
+}
+
+#achievements h4 {
+    color: var(--accent-color-3);
+    /* Cyan for achievement titles */
+}
+
+#achievements p {
+    color: var(--text-light);
+}
+
+.achievement-list {
+    padding-left: 0;
+    /* Remove default ul padding */
+}
+
+.achievement-item {
+    background-color: rgba(0, 0, 0, 0.1);
+    /* More transparent black */
+    backdrop-filter: blur(1px);
+    /* Increased blur */
+    -webkit-backdrop-filter: blur(1px);
+    border-radius: 8px;
+    border: 0px solid rgba(229, 229, 229, 0.5);
+    /* Slightly less transparent border */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px var(--accent-color-4);
+    border-color: var(--accent-color-4);
+    /* Cyan hover shadow */
+}
+
+.achievement-item i {
+    color: var(--accent-color-3);
+    /* Cyan achievement icons */
+    min-width: 40px;
+    /* Ensure icon has space */
+    transition: transform 0.3s ease;
+}
+
+.achievement-item h5 {
+    color: var(--accent-color-3);
+    /* White for achievement name */
+}
+
+.achievement-item p {
+    color: var(--text-light);
+}
+
+.achievement-item:hover i {
+    transform: scale(1.1);
+}
+
+/* Hobbies Section */
+#hobbies {
+    background-color: transparent;
+    /* Changed to transparent */
+}
+
+#hobbies h4 {
+    color: var(--accent-color-3);
+    /* Cyan for hobby titles */
+}
+
+#hobbies p {
+    color: var(--text-light);
+}
+
+.hobby-card {
+    background-color: rgba(0, 0, 0, 0.05);
+    /* More transparent black */
+    backdrop-filter: blur(1px);
+    /* Increased blur */
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 8px;
+    border: 0px solid rgba(229, 229, 229, 0.5);
+    /* Slightly less transparent border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hobby-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px var(--accent-color-4);
+    border-color: var(--accent-color-4);
+    /* Cyan hover shadow */
+}
+
+.hobby-card i {
+    color: var(--accent-color-3);
+    /* Cyan hobby icons */
+    transition: transform 0.3s ease;
+}
+
+.hobby-card h4 {
+    color: var(--accent-color-3);
+    /* White for hobby names */
+}
+
+.hobby-card p {
+    color: var(--text-light);
+}
+
+.hobby-card:hover i {
+    transform: scale(1.1);
+}
+
+/* Contact Section */
+#contact {
+    background-color: transparent;
+    /* Changed to transparent */
+}
+
+#contact .form-control {
+    background-color: rgba(0, 0, 0, 0.4);
+    /* More transparent black */
+    backdrop-filter: blur(10px);
+    /* Increased blur */
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid rgba(229, 229, 229, 0.5);
+    /* Slightly less transparent cyan border */
+    color: var(--text-light);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact .form-control::placeholder {
+    color: rgba(224, 224, 224, 0.7);
+}
+
+#contact .form-control:focus {
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Slightly less transparent on focus */
+    border-color: var(--accent-color-4);
+    /* Cyan focus */
+    box-shadow: 0 0 0 0.25rem rgba(229, 229, 229, 0.5);
+    /* Cyan focus shadow */
+    color: var(--text-light);
+}
+
+#contact .form-label {
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    /* Pure black */
+    border-top: 1px solid var(--accent-color-4);
+    /* Cyan border */
+    color: var(--text-light);
+}
+
+.social-links a {
+    color: var(--text-light) !important;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-color-4) !important;
+    /* Cyan social link hover */
+    transform: translateY(-3px);
+}
+
+
+/* Scroll to Top Button */
+.scroll-to-top-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--accent-color-4);
+    /* Cyan */
+    color: var(--primary-color);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    /* Hidden by default */
+    visibility: hidden;
+    /* Hidden by default */
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-to-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-to-top-btn:hover {
+    background-color: var(--accent-color-3);
+    /* White on hover */
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Custom Message Box */
+.custom-message-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--card-bg);
+    border: 1px solid var(--accent-color-4);
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    display: none;
+    /* Hidden by default */
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    text-align: center;
+    max-width: 350px;
+    width: 90%;
+}
+
+.custom-message-box.show {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.custom-message-box .message-content p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+.custom-message-box .message-content button {
+    margin-top: 10px;
+}
+
+/* Scroll Reveal Animations */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* For child elements within a revealing section, add a slight delay */
+.reveal-on-scroll-child {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal-on-scroll.is-visible .reveal-on-scroll-child {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Add staggered delay for children */
+.reveal-on-scroll.is-visible .portfolio-item:nth-child(1),
+.reveal-on-scroll.is-visible .experience-item:nth-child(1),
+.reveal-on-scroll.is-visible .education-item:nth-child(1),
+.reveal-on-scroll.is-visible .skill-card:nth-child(1),
+.reveal-on-scroll.is-visible .achievement-item:nth-child(1),
+.reveal-on-scroll.is-visible .hobby-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.reveal-on-scroll.is-visible .portfolio-item:nth-child(2),
+.reveal-on-scroll.is-visible .experience-item:nth-child(2),
+.reveal-on-scroll.is-visible .education-item:nth-child(2),
+.reveal-on-scroll.is-visible .skill-card:nth-child(2),
+.reveal-on-scroll.is-visible .achievement-item:nth-child(2),
+.reveal-on-scroll.is-visible .hobby-card:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.reveal-on-scroll.is-visible .portfolio-item:nth-child(3),
+.reveal-on-scroll.is-visible .experience-item:nth-child(3),
+.reveal-on-scroll.is-visible .education-item:nth-child(3),
+.reveal-on-scroll.is-visible .skill-card:nth-child(3),
+.reveal-on-scroll.is-visible .achievement-item:nth-child(3),
+.reveal-on-scroll.is-visible .hobby-card:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.reveal-on-scroll.is-visible .portfolio-item:nth-child(4),
+.reveal-on-scroll.is-visible .experience-item:nth-child(4),
+.reveal-on-scroll.is-visible .education-item:nth-child(4),
+.reveal-on-scroll.is-visible .skill-card:nth-child(4),
+.reveal-on-scroll.is-visible .achievement-item:nth-child(4),
+.reveal-on-scroll.is-visible .hobby-card:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.reveal-on-scroll.is-visible .portfolio-item:nth-child(5),
+.reveal-on-scroll.is-visible .skill-card:nth-child(5),
+.reveal-on-scroll.is-visible .hobby-card:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+.reveal-on-scroll.is-visible .portfolio-item:nth-child(6),
+.reveal-on-scroll.is-visible .skill-card:nth-child(6),
+.reveal-on-scroll.is-visible .hobby-card:nth-child(6) {
+    transition-delay: 0.6s;
+}
+
+.reveal-on-scroll.is-visible .skill-card:nth-child(7),
+.reveal-on-scroll.is-visible .hobby-card:nth-child(7) {
+    transition-delay: 0.7s;
+}
+
+.reveal-on-scroll.is-visible .skill-card:nth-child(8),
+.reveal-on-scroll.is-visible .hobby-card:nth-child(8) {
+    transition-delay: 0.8s;
+}
+
+.reveal-on-scroll.is-visible .skill-card:nth-child(9),
+.reveal-on-scroll.is-visible .hobby-card:nth-child(9) {
+    transition-delay: 0.9s;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.95);
+        border-top: 1px solid var(--accent-color-4);
+        /* Cyan border */
+    }
+
+    .home .col-lg-6 {
+        text-align: center !important;
+    }
+
+    .home .d-flex {
+        justify-content: center !important;
+    }
+
+    .profile-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .stat-box {
+        padding: 10px 15px;
+    }
+
+    .stat-box h3 {
+        font-size: 1.5rem;
+    }
+
+    .stat-box p {
+        font-size: 0.8rem;
+    }
+
+    .custom-btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}

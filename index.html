@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhythm Yeasir's Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="canvas-container">
+        <canvas id="backgroundCanvas"></canvas>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">Rhythm Yeasir</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#professional-skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#achievements">Achievements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hobbies">Hobbies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="d-flex align-items-center min-vh-100 text-white text-center reveal-on-scroll">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
+                    <img src="image/photo.png" class="img-fluid rounded-circle profile-img" alt="Your Profile Picture">
+                </div>
+                <div class="col-lg-6 order-lg-1 text-lg-start">
+                    <h1 class="accent-text">Hello, I'm <span class="display-3 fw-bold mb-3 highlight-text-color">Rhythm Yeasir</span></h1>
+                    <p class="lead mb-4">A passionate Game Developer, Graphics Designer, and Music & Sound Designer. Currently pursuing a degree in Computer
+                    Science and Engineering at the University of Asia Pacific.</p>
+                    <a href="#contact" class="btn btn-primary btn-lg custom-btn">Let's Connect
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-5 text-white reveal-on-scroll">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title">About Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <p class="lead mb-4">
+                        Hello! I'm Rhythm Yeasir, a dedicated and versatile Computer Science and Engineering student at the University of Asia
+                        Pacific with a strong passion for game development and artificial intelligence. As an indie game developer, I specialize
+                        in creating immersive 2D platformers with advanced mechanics, blending technical precision with creative design using
+                        tools like Unity and C#. I'm committed to building gameplay experiences that are both engaging and emotionally resonant.
+                    </p>
+                    <p class="mb-4">
+                        In addition to development, I'm a self-taught music producer and sound designer focused on crafting immersive audio that
+                        enhances narrative and atmosphere. From ambient soundscapes to rhythmically intense sequences, I use digital audio
+                        workstations, synthesizers, field recordings, and layered effects to shape rich, cinematic audio experiences that bring
+                        virtual worlds to life.
+                    </p>
+                    <p>
+                        My technical skill set includes a wide range of programming languages and tools such as HTML, CSS, JavaScript, Python,
+                        C#, C/C++, Java, Unity, and Godot. I'm a lifelong learner who thrives on exploring new technologies and constantly
+                        evolving my creative and technical abilities. Outside of development, I enjoy experimenting with new ideas and
+                        disciplines to stay inspired and adaptable.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-5 text-white reveal-on-scroll">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title">My Recent Works</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="portfolio-item card bg-dark border-0 reveal-on-scroll-child">
+                        <div class="video-player-container">
+                            <video controls class="w-100 rounded-top" poster="image/spaceShooter.png">
+                                <source src="video/spaceShooter.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title accent-text">Space Shooter Game</h5>
+                            <p class="text-white">A classic arcade-style space shooter game developed with Godot and GDScript.
+                                Features include enemy waves, and a scoring system. One of my first projects of learning Godot.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-8">
+                    <div class="portfolio-item card bg-dark border-0 reveal-on-scroll-child">
+                        <div class="video-player-container">
+                            <video controls class="w-100 rounded-top" poster="image/rogueLike.png">
+                                <source src="video/rogueLike.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title accent-text">Rogue-like Dungeon Crawler</h5>
+                            <p class="text-white">An immersive rogue-like game built with Godot Engine, featuring
+                                procedurally generated dungeons, turn-based combat, and a variety of items.
+                                Focuses on replayability and strategic depth.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-8">
+                    <div class="portfolio-item card bg-dark border-0 reveal-on-scroll-child">
+                        <div class="audio-player-container text-center py-3">
+                            <audio controls class="w-100">
+                                <source src="music/A5.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title accent-text">Original Music Composition: "Neon Nights"</h5>
+                            <p class="text-white">An original music piece composed and produced by me, showcasing skills
+                                in making EDM style music (like synthwave, cyberpuck, deep house, etc.). This track aims to evoke a specific mood and
+                                atmosphere.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-8">
+                    <div class="portfolio-item card bg-dark border-0 reveal-on-scroll-child">
+                        <div class="audio-player-container text-center py-3">
+                            <audio controls class="w-100">
+                                <source src="music/MORNING GLAZE.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title accent-text">Original Music Composition: "Morning Glaze"</h5>
+                            <p class="text-white">Another original composition, "Morning Glaze," designed to create a
+                                laidback peaceful experience. This music was inspired by the game Stardew Valley with the same laidback peaceful experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="professional-skills" class="py-5 text-white reveal-on-scroll">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title">Skills</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+                <div class="col">
+                    <div class="skill-card text-center p-4 reveal-on-scroll-child">
+                        <i class="fab fa-html5 fa-4x mb-3 accent-text"></i>
+                        <h4 class="fw-bold">HTML5</h4>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill-card text-center p-4 reveal-on-scroll-child">
+                        <i class="fab fa-css3-alt fa-4x mb-3 accent-text"></i>
+                        <h4 class="fw-bold">CSS3</h4>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill-card text-center p-4 reveal-on-scroll-child">
+                        <i class="fab fa-js fa-4x mb-3 accent-text"></i>
+                        <h4 class="fw-bold">JavaScript</h4>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill-card text-center p-4 reveal-on-scroll-child">
+                        <i class="fab fa-python fa-4x mb-3 accent-text"></i>
+                        <h4 class="fw-bold">Python</h4>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill-card text-center p-4 reveal-on-scroll-child">
+                        <i class="fas fa-code fa-4x mb-3 accent-text"></i>
+                        <h4 class="fw-bold">C/C++</h4>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill-card text-center p-4 reveal-on-scroll-child">
+                        <i class="fas fa-hashtag fa-4x mb-3 accent-text"></i>
+                        <h4 class="fw-bold">C#</h4>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill-card text-center p-4 reveal-on-scroll-child">
+                        <i class="fab fa-java fa-4x mb-3 accent-text"></i>
+                        <h4 class="fw-bold">Java</h4>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill-card text-center p-4 reveal-on-scroll-child">
+                        <i class="fas fa-gamepad fa-4x mb-3 accent-text"></i>
+                        <h4 class="fw-bold">Unity</h4>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill-card text-center p-4 reveal-on-scroll-child">
+                        <i class="fas fa-code fa-4x mb-3 accent-text"></i>
+                        <h4 class="fw-bold">GDScript</h4>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill-card text-center p-4 reveal-on-scroll-child">
+                        <i class="fas fa-rocket fa-4x mb-3 accent-text"></i>
+                        <h4 class="fw-bold">Godot</h4>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill-card text-center p-4 reveal-on-scroll-child">
+                        <i class="fas fa-music fa-4x mb-3 accent-text"></i>
+                        <h4 class="fw-bold">Music & Sound Design</h4>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skill-card text-center p-4 reveal-on-scroll-child">
+                        <i class="fas fa-paint-brush fa-4x mb-3 accent-text"></i>
+                        <h4 class="fw-bold">Adobe Illustrator & Photoshop</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" class="py-5 text-white reveal-on-scroll">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title">My Achievements</h2>
+            <div class="row justify-content-center g-4">
+                <div class="col-lg-8">
+                    <ul class="list-unstyled achievement-list">
+                        <li class="achievement-item p-4 mb-3 d-flex align-items-start reveal-on-scroll-child">
+                            <i class="fas fa-trophy fa-2x me-4 accent-text"></i>
+                            <div>
+                                <h4 class="fw-bold">ICPC Regionalist</h4>
+                                <p>ICPC Asia Dhaka Regional Contest 2024</p>
+                            </div>
+                        </li>
+                        <li class="achievement-item p-4 mb-3 d-flex align-items-start reveal-on-scroll-child">
+                            <i class="fas fa-medal fa-2x me-4 accent-text"></i>
+                            <div>
+                                <h4 class="fw-bold">1st Runner Up in a CTF</h4>
+                                <p>UAP Intra-University CTF Contest 3.0</p>
+                            </div>
+                        </li>
+                        <li class="achievement-item p-4 mb-3 d-flex align-items-start reveal-on-scroll-child">
+                            <i class="fas fa-laptop-code fa-2x me-4 accent-text"></i>
+                            <div>
+                                <h4 class="fw-bold">Participated in 4 IUPC Contests</h4>
+                                <p>KUET IUPC 2025, AUST IUPC 2025, UIU IUPC 2025, UAP IUCPC 2024</p>
+                            </div>
+                        </li>
+                        <li class="achievement-item p-4 mb-3 d-flex align-items-start reveal-on-scroll-child">
+                            <i class="fas fa-graduation-cap fa-2x me-4 accent-text"></i>
+                            <div>
+                                <h4 class="fw-bold">Awarded ICPC-JRC Scholarship</h4>
+                                <p>ICPC-JRC Scholarship for Spring 2024 Semester</p>
+                            </div>
+                        </li>
+                        <li class="achievement-item p-4 d-flex align-items-start reveal-on-scroll-child">
+                            <i class="fas fa-award fa-2x me-4 accent-text"></i>
+                            <div>
+                                <h4 class="fw-bold">Awarded 3 Consecutive VC Awards</h4>
+                                <p>3 Consecutive VC Awards from 1-1 to 2-1</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="hobbies" class="py-5 text-white reveal-on-scroll">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title">My Hobbies</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col">
+                    <div class="hobby-card p-4 text-center reveal-on-scroll-child">
+                        <i class="fas fa-gamepad fa-3x mb-3 accent-text"></i>
+                        <h4 class="fw-bold">Playing Games</h4>
+                        <p>Enjoying strategic challenges and immersive stories.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="hobby-card p-4 text-center reveal-on-scroll-child">
+                        <i class="fas fa-tv fa-3x mb-3 accent-text"></i>
+                        <h4 class="fw-bold">Watching Animes, TV-Series & Movies</h4>
+                        <p>Exploring various genres and narratives.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="hobby-card p-4 text-center reveal-on-scroll-child">
+                        <i class="fas fa-book-open fa-3x mb-3 accent-text"></i>
+                        <h4 class="fw-bold">Reading Books</h4>
+                        <p>Exploring books on inner workings of different things.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="hobby-card p-4 text-center reveal-on-scroll-child">
+                        <i class="fas fa-utensils fa-3x mb-3 accent-text"></i>
+                        <h4 class="fw-bold">Cooking</h4>
+                        <p>Experimenting with new recipes and cuisines.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="hobby-card p-4 text-center reveal-on-scroll-child">
+                        <i class="fas fa-camera-retro fa-3x mb-3 accent-text"></i>
+                        <h4 class="fw-bold">Photography</h4>
+                        <p>Capturing moments and experiences around me.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="hobby-card p-4 text-center reveal-on-scroll-child">
+                        <i class="fas fa-wrench fa-3x mb-3 accent-text"></i>
+                        <h4 class="fw-bold">Making Random Stuff</h4>
+                        <p>Creating and experimenting with various projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-5 text-white reveal-on-scroll">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title">Let's Work Together</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <p class="text-center mb-4">Have a project in mind or just want to say hello? Feel free to reach
+                        out!</p>
+                    <form >
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" name="subject"
+                                placeholder="Project Inquiry, Collaboration, etc." required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your message here..."
+                                required></textarea>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg custom-btn">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 text-center text-white-50">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 Rhythm Yeasir. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <div id="customMessageBox" class="custom-message-box">
+        <div class="message-content">
+            <p id="messageText"></p>
+            <button id="closeMessageBtn" class="btn btn-sm custom-btn">OK</button>
+        </div>
+    </div>
+
+    <button id="scrollToTopBtn" class="scroll-to-top-btn" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
