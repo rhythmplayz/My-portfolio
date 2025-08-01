@@ -385,8 +385,6 @@ h6 {
 .skill-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px var(--accent-color-4);
-    border-color: var(--accent-color-4);
-    /* Cyan hover shadow */
 }
 
 .skill-card i {
@@ -444,8 +442,6 @@ h6 {
 .achievement-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px var(--accent-color-4);
-    border-color: var(--accent-color-4);
-    /* Cyan hover shadow */
 }
 
 .achievement-item i {
@@ -499,8 +495,6 @@ h6 {
 .hobby-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px var(--accent-color-4);
-    border-color: var(--accent-color-4);
-    /* Cyan hover shadow */
 }
 
 .hobby-card i {
