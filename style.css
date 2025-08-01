@@ -402,7 +402,7 @@ h6 {
 }
 
 .skill-card:hover i {
-    transform: scale(1.1);
+    transform: scale(1.25);
 }
 
 /* Achievements Section */
@@ -460,7 +460,7 @@ h6 {
 }
 
 .achievement-item:hover i {
-    transform: scale(1.1);
+    transform: scale(1.25);
 }
 
 /* Hobbies Section */
@@ -510,7 +510,7 @@ h6 {
 }
 
 .hobby-card:hover i {
-    transform: scale(1.1);
+    transform: scale(1.25);
 }
 
 /* Contact Section */
