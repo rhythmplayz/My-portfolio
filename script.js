@@ -133,90 +133,23 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(element);
     });
 
-    // --- Vertex Background Animation ---
-    const canvas = document.getElementById('backgroundCanvas');
-    const ctx = canvas.getContext('2d');
-
-    let particles = [];
-    const numParticles = 80; // Adjust for performance vs. density
-    const maxDistance = 120; // Max distance for drawing lines
-    const particleRadius = 1.5; // Radius of each particle dot
-    const particleSpeed = 0.5; // Max speed for particles
-
-    function initCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        particles = [];
-        for (let i = 0; i < numParticles; i++) {
-            particles.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                vx: (Math.random() - 0.5) * particleSpeed,
-                vy: (Math.random() - 0.5) * particleSpeed,
-                radius: particleRadius
-            });
-        }
+    // --- Vanta.js DOTS Background Animation ---
+    if (window.VANTA) {
+        window.VANTA.DOTS({
+            el: ".vanta-bg", // Target the new div for Vanta.js
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x9a8d00,
+            color2: 0xe3df00,
+            backgroundColor: 0x0,
+            size: 5.00,
+            spacing: 88.00,
+            showLines: false
+        });
     }
-
-    function drawParticles() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the entire canvas
-
-        for (let i = 0; i < particles.length; i++) {
-            const p1 = particles[i];
-
-            // Draw particle dot
-            ctx.beginPath();
-            ctx.arc(p1.x, p1.y, p1.radius, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(247, 255, 8, 0.8)'; // Brighter cyan for dots
-            ctx.fill();
-
-            // Draw lines to other particles
-            for (let j = i + 1; j < particles.length; j++) {
-                const p2 = particles[j];
-                const dx = p1.x - p2.x;
-                const dy = p1.y - p2.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-
-                if (distance < maxDistance) {
-                    ctx.beginPath();
-                    ctx.moveTo(p1.x, p1.y);
-                    ctx.lineTo(p2.x, p2.y);
-                    // Fade line based on distance
-                    ctx.strokeStyle = `rgba(247, 255, 8, ${1 - (distance / maxDistance) * 0.7})`;
-                    ctx.lineWidth = 0.5;
-                    ctx.stroke();
-                }
-            }
-        }
-    }
-
-    function updateParticles() {
-        for (let i = 0; i < particles.length; i++) {
-            const p = particles[i];
-
-            p.x += p.vx;
-            p.y += p.vy;
-
-            // Bounce off walls
-            if (p.x < 0 || p.x > canvas.width) {
-                p.vx *= -1;
-            }
-            if (p.y < 0 || p.y > canvas.height) {
-                p.vy *= -1;
-            }
-        }
-    }
-
-    function animateParticles() {
-        updateParticles();
-        drawParticles();
-        requestAnimationFrame(animateParticles);
-    }
-
-    // Initialize and start animation
-    initCanvas();
-    animateParticles();
-
-    // Handle window resize
-    window.addEventListener('resize', initCanvas);
 });

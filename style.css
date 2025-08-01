@@ -19,33 +19,25 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: transparent;
-    /* Changed to transparent */
     color: var(--text-light);
     line-height: 1.6;
     overflow-x: hidden;
     /* Prevent horizontal scroll due to animations */
 }
 
-/* Canvas background container */
-#canvas-container {
+/* Vanta.js Background container */
+.vanta-bg {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
-    z-index: -1;
-    /* Ensures it's behind other content */
+    z-index: -2;
+    /* Ensures it's behind other content and even behind fixed elements with z-index: -1 */
+    background-color: var(--primary-color);
+    /* Fallback/base color */
 }
 
-#backgroundCanvas {
-    display: block;
-    /* Remove extra space below canvas */
-    width: 100%;
-    height: 100%;
-    background-color: var(--primary-color);
-    /* This is the base background color */
-}
 
 /* Typography & General */
 h1,
@@ -63,7 +55,7 @@ h6 {
     /* Using Cyan for primary accent text */
 }
 
-.highlight-text-color{
+.highlight-text-color {
     color: var(--accent-color-5);
 }
 
@@ -159,7 +151,7 @@ h6 {
     /* Adjust for fixed navbar */
 }
 
-.img-con:hover{
+.img-con:hover {
     padding: 50px;
 }
 
